@@ -21,7 +21,7 @@ const routes: Routes = [
   {
     path: "user",
     canActivate: [AuthGuardGuard],
-    data: { claimType: "canViewUserSection:true" },
+    data: { claimType: "canViewUserSection" },
     loadChildren: () =>
       import("./user-section/user-section.module").then(
         m => m.UserSectionModule

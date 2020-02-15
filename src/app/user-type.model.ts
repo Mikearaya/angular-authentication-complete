@@ -7,6 +7,7 @@ export const userClaims = {
   ],
   userName: "User"
 };
+
 export const AdminClaims = {
   bearerToken: "",
   isAuthenticated: true,
@@ -16,6 +17,7 @@ export const AdminClaims = {
   ],
   userName: "Admin"
 };
+
 export const UnAuthenticatedUser = {
   bearerToken: "",
   isAuthenticated: true,

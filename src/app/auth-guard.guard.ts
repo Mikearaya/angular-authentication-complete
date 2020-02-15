@@ -16,7 +16,9 @@ export class AuthGuardGuard implements CanActivate {
   constructor(
     private securityService: SecurityServiceService,
     private router: Router
-  ) {}
+  ) {
+    this.securityService.logIn().subscribe();
+  }
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -25,6 +27,7 @@ export class AuthGuardGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
+    console.log("inside claim");
     const claimType: string = next.data["claimType"];
 
     if (this.securityService.hasClaim(claimType)) {
